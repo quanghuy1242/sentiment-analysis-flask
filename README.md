@@ -10,6 +10,7 @@ Download the model from Google Drive folder that you were gained access. Copy it
 ```bash
 python3.7 -m venv venv-3.7 # Create virtual environment
 source venv-3.7/bin/activate # active venv
+pip install -r requirements.txt # install module from requirements.txt
 python -m flask run # run flask development server
 ```
 
@@ -18,7 +19,7 @@ python -m flask run # run flask development server
 Open address on your bash screen for accessing homepage
 
 ### API
-The only way to predict a text is send a POST request to `/api/predict` with body `{ "text": string }`
+The only way to predict a text is sent a POST request to `/api/predict` with body `{ "text": string }`
 
 Example using curl:
 ```bash
