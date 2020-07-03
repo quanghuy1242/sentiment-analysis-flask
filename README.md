@@ -5,7 +5,6 @@
 - Python 3.7
 
 ## Install
-Download the model from Google Drive folder that you were gained access. Copy it into assets folder and name it model.h5
 
 ```bash
 python3.7 -m venv venv-3.7 # Create virtual environment
@@ -13,6 +12,9 @@ source venv-3.7/bin/activate # active venv
 pip install -r requirements.txt # install module from requirements.txt
 python -m flask run # run flask development server
 ```
+
+## Setup the firestore database
+You must setup firestore database!!!
 
 ## Usage
 ### With UI

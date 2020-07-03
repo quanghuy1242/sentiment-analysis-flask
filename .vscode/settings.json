@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "venv-3.7/bin/python3.7",
+    "python.pythonPath": "venv-3.7/bin/python",
     "editor.tabSize": 4
 }
