@@ -93,9 +93,9 @@ body {
 /*
  * Footer
  */
-/* .mastfoot {
-  color: rgba(255, 255, 255, .5);
-} */
+.mastfoot {
+  z-index: 99999999999;
+}
 
 #chart {
   height: 300px;
