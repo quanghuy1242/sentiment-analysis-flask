@@ -29,10 +29,22 @@ function drawChart(title, data) {
     chart.draw(dataTable, options)
 }
 
+function setDisable(state) {
+    btnSubmit.disabled = state;
+    btnSubmit.textContent = state ? "Loading..." : "Submit"
+    btnDelete.disabled = state;
+}
+
 btnSubmit.addEventListener('click', async e => {
     e.preventDefault()
 
-    if (text.value === '') { return; }
+    setDisable(true);
+
+    if (text.value === '') {
+        alert("Xin vui lòng nhập dữ liệu!!!")
+        setDisable(false);
+        return;
+    }
 
     const res = await fetch('/api/predict', {
         method: 'POST',
@@ -44,7 +56,9 @@ btnSubmit.addEventListener('click', async e => {
     })
 
     const { title, probabilities } = await res.json();
-    drawChart(title, Object.entries(probabilities))
+    drawChart(title, Object.entries(probabilities));
+
+    setDisable(false);
 });
 
 btnDelete.addEventListener('click', () => {
