@@ -17,14 +17,7 @@ doc_ref = db.collection(u'reviews')
 
 app = Flask(__name__)
 
-init_model = load_model("assets/model.h5")
-model = Model(
-    inputs=init_model.input,
-    outputs=[
-        init_model.output,
-        init_model.get_layer('attention_weight').output
-    ]
-)
+model = load_model("assets/model.h5")
 
 
 @app.route("/")

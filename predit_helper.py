@@ -78,8 +78,14 @@ def predict_on_text(text, model: Model):
     encoded_text = pad_sequences(encoded_text, maxlen=max_words)
 
     # Make predictions
-    label_probs, attentions = model.predict(encoded_text)
-    label_probs = {id2label[_id]: float(prob) for (
-        label, _id), prob in zip(label2id.items(), label_probs[0])}
+    # label_probs, attentions = model.predict(encoded_text)
+    # label_probs = {id2label[_id]: float(prob) for (
+    #     label, _id), prob in zip(label2id.items(), label_probs[0])}
+    predictions = model.predict(encoded_text)[0]
 
-    return label_probs
+    my_predict = {}
+
+    for i, p in enumerate(predictions):
+        my_predict[id2label[i]] = float(p)
+
+    return my_predict
